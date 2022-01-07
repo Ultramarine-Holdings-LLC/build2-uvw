@@ -1,0 +1,3 @@
+import libs = uvw%lib{uvw}
+
+exe{driver}: cxx{*} $libs
