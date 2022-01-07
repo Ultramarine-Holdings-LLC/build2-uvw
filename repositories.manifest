@@ -3,5 +3,4 @@ summary: uvw project repository
 
 :
 role: prerequisite
-type: git
 location: https://pkg.cppget.org/1/testing
