@@ -3,9 +3,9 @@ import libs = libuv%lib{uv}
 if ($cxx.target.class == 'windows')
 {
     if ($cxx.target.system == 'mingw32')
-        c.libs =+ "-lws2_32"
+        cxx.libs =+ "-lws2_32"
     else
-        c.libs =+ "ws2_32.lib"
+        cxx.libs =+ "ws2_32.lib"
 }
 
 lib{uvw}: \
