@@ -1,0 +1,6 @@
+$out_root/
+{
+  include uvw/
+}
+
+export $out_root/uvw/$import.target
