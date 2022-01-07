@@ -8,11 +8,16 @@ if ($cxx.target.class == 'windows')
         cxx.libs =+ "ws2_32.lib"
 }
 
-lib{uvw}: \
+if ($cxx.target.system == 'mingw32')
+  cxx.loptions += -Wl,--export-all-symbols
+
+lib{uvw}: libul{uvw}: \
     src/hxx{uvw.hpp} \
     src/uvw/hxx{handle.hpp request.hpp resource.hpp type_info.hpp underlying_type.hpp} \
     src/uvw/{hxx cxx}{*} \
     $libs
+lib{uvw}: def{uvw}: include = ($c.target.system == 'win32-msvc')
+def{uvw}: libul{uvw}
 
 cxx.poptions =+ "-I$src_base/src" "-DUVW_AS_LIB"
 
