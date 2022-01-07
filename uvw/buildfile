@@ -1,0 +1,20 @@
+import libs = libuv%lib{uv}
+
+lib{uvw}: \
+    src/hxx{uvw.hpp} \
+    src/uvw/{hxx cxx}{*} \
+    $libs
+
+cxx.poptions =+ "-I$src_base/src" "-DUVW_AS_LIB"
+
+lib{uvw}:
+{
+  cxx.export.poptions = "-I$src_base/src" "-DUVW_AS_LIB"
+  cxx.export.libs = $libs
+}
+
+src/{hxx}{*}:
+{
+  install         = include/
+  install.subdirs = true
+}
