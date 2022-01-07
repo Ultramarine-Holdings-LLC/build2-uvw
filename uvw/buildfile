@@ -2,6 +2,7 @@ import libs = libuv%lib{uv}
 
 lib{uvw}: \
     src/hxx{uvw.hpp} \
+    src/uvw/hxx{handle.hpp request.hpp resource.hpp type_info.hpp underlying_type.hpp} \
     src/uvw/{hxx cxx}{*} \
     $libs
 
