@@ -8,9 +8,6 @@ if ($cxx.target.class == 'windows')
         cxx.libs =+ "ws2_32.lib"
 }
 
-if ($cxx.id == 'msvc')
-  cxx.coptions += "/utf-8"
-
 if ($cxx.target.system == 'mingw32')
   cxx.loptions += -Wl,--export-all-symbols
 
